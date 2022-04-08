@@ -1,0 +1,289 @@
+/* ==================== FONTS ==================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500&display=swap');
+
+/* ==================== CUSTOM PROPERTIES / VARIABLES ==================== */
+
+:root {
+    /* Colors */
+    /* HSL (hue, saturation, lightness) */
+    /* HSL Calculator: https://www.w3schools.com/colors/colors_hsl.asp */
+    /* Color Picker: https://www.w3schools.com/colors/colors_picker.asp */
+    /* CSS3 Generator: https://css3generator.com/ */
+
+    /* Blue hsl(220,100%,50%) */
+
+    --hue: 220;
+    --sat: 100%;
+    --lig: 50%;
+
+    --c-primary: hsl(220,100%,50%);
+    --c-secondary: hsl(220,100%,60%);
+    --c-third: hsl(220,100%,40%);
+    --c-text: hsl(225, 6%, 13%);
+
+    /* Font and typography */
+    /* .5rem = 8px | 1rem = 16px ... */
+
+    --ff-primary: 'Poppins', sans-serif;
+    --ff-secondary: '';
+
+    --fw-norm: 200;
+    --fw-reg: 300;
+    --fw-med: 400;
+    --fw-bold: 500;
+
+    --fs-body: 1rem;
+    --fs-body2: .9rem;
+    --fs-h1: 1.5rem;
+    --fs-h2: 1rem;
+    --fs-a: .875rem;
+    --fs-small: .75rem;
+}
+
+/* Responsive typography */
+
+@media screen and (min-width: 968px) {
+    :root {
+        
+    }
+}
+    
+
+
+/* ==================== UNIVERSAL STYLE ==================== */
+
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+img {
+    width: 25px;
+    height: 25px;
+    display: block;
+}
+
+ul {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+    cursor: pointer;
+}
+
+input {
+    border: none;
+    cursor: pointer;
+}
+
+button {
+    border: none;
+    background: #fff;
+    cursor: pointer;
+}
+
+/* ==================== REUSABLE ==================== */
+
+
+/* ==================== FORM ==================== */
+
+
+.form {
+    min-width: 470px;
+    border-radius: .5rem;
+    border: 1px solid #dadce0;
+    padding: 3rem 2.5rem 2.25rem;
+}
+
+.form__group-top {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 2rem;
+}
+
+.form__image {
+    margin-bottom: 1rem;
+}
+
+.form__title {
+    font-family: var(--ff-primary);
+    font-size: var(--fs-h1);
+    font-weight: var(--fw-med);
+    text-align: center;
+    margin-bottom: .5rem;
+}
+
+.form__subtitle {
+    font-family: var(--ff-primary);
+    font-size: var(--fs-h2);
+    font-weight: var(--fw-reg);
+}
+
+.form__group-mid {
+    position: relative;
+    height: 3.5rem;
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    margin-bottom: 2.5rem;
+    
+}
+
+.form__label {
+    position: absolute;
+    top: 1.1rem;
+    left: .8rem;
+    font-family: var(--ff-primary);
+    font-size: var(--fs-body2);
+    font-weight: var(--fw-med);
+    color: #5f6368;
+    background: #fff;
+    padding: 0 .2rem;
+    transition: .2s;
+}
+
+.form__input {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: 1px solid #dadce0;
+    border-radius: .2rem;
+    background: none;
+    padding: 0 1rem;
+    z-index: 1;
+}
+
+.form__link {
+    position: absolute;
+    top: 3.8rem;
+    left: 0.2rem;
+    font-family: var(--ff-primary);
+    font-size: var(--fs-a);
+    font-weight: var(--fw-bold);
+    color: #1A73EA;
+}
+
+.form__group-bottom {
+    position: relative;
+    width: 100%;
+    height: 3rem;
+    display: flex;
+    justify-content: space-between;
+    margin: 3rem 0;
+    
+}
+
+.btn__creac {
+    position: absolute;
+    top: 2rem;
+    left: 0;
+    background: #fff;
+    font-family: var(--ff-primary);
+    font-size: var(--fs-a);
+    color: var(--c-secondary);
+    height: 2rem;
+}
+
+.btn__creac:hover { 
+    color: var(--c-third);
+    border-radius: .3rem;
+    background: #f7f7f7;
+}
+
+.btn__nxt {
+    position: absolute;
+    top: 2rem;
+    right: 0;
+    color: #fff;
+    background: #1a73e8;
+    border-radius: .3rem;
+    padding: .7rem 1.7rem;
+}
+
+.btn__nxt:hover {
+    background: hsl(214, 82%, 41%);
+    transition: all .3s ease-out;
+}
+
+/* ==================== LABEL MOVE UP WHEN FOCUS ON INPUT ==================== */
+
+.form__input:focus + .form__label {
+    top: -.5rem;
+    left: .7rem;
+    font-family: var(--ff-primary);
+    color: var(--c-secondary);
+    font-weight: var(--fw-med);
+    font-size: .8rem;
+    z-index: 2;
+}
+
+/* ==================== LABEL STAY UP WHEN ACTION ON INPUT ==================== */
+
+.form__input:not(:placeholder-shown).form__input:not(:focus) + .form__label {
+    top: -.5rem;
+    left: .7rem;
+    font-family: var(--ff-primary);
+    color: var(--c-secondary);
+    font-weight: var(--fw-med);
+    font-size: .8rem;
+    z-index: 2;
+}
+
+/* ==================== LABEL STAY UP WHEN ACTION ON INPUT ==================== */
+
+.foot {
+    min-width: 470px;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 1.5rem;
+}
+
+.selector {
+    border: none;
+    cursor: pointer;
+    outline: none;
+    background: #fff;
+    color: var(--c-text);
+    font-size: var(--fs-small);
+}
+
+.menu__item {
+    padding-left: 1.8rem;
+    color: #757575;
+    font-family: var(--ff-primary);
+    font-size: var(--fs-small);
+    font-weight: var(--fw-bold);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
