@@ -68,7 +68,6 @@ body {
     justify-content: center;
     align-items: center;
     text-align: center;
-    transition: .3s;
 }
 
 img {
@@ -108,7 +107,6 @@ button {
     border-radius: .5rem;
     border: 1px solid #dadce0;
     padding: 3rem 2.5rem 2.25rem;
-    transition: .3s;
 }
 
 .form__group-top {
@@ -157,7 +155,6 @@ button {
     color: #5f6368;
     background: #fff;
     padding: 0 .2rem;
-    transition: .2s;
 }
 
 .form__input {
@@ -256,6 +253,7 @@ button {
     display: flex;
     justify-content: space-between;
     margin-top: 1.5rem;
+    transition: .3s;
 }
 
 .selector {
@@ -279,28 +277,57 @@ button {
 
 @media screen and (max-width: 600px) {
     body {
+        margin: 0 auto;
         display: block;
         text-align: center;
-        transition: .3s;
-        width: 100%;
     }
     
     .form {
-        min-width: none;
-        margin: 0 auto;
+        min-width: 0;
         border: none;
     }
 
     .foot {
-        display: flex;
-        justify-content: space-between;
-        flex: wrap;
-        margin-top: 1.5rem;
-        padding-left: 20px;
-        padding-right: 20px;
+        min-width: 0;
+        width: 100%;
+        position: absolute;
+        bottom: 0;
+        padding: 3rem 2.5rem 2.25rem;
+        transition: .3s;
     }
 }
 
+@media screen and (max-width: 330px) {
+
+    .form__group-bottom {
+        position: static;
+        flex-direction: column;
+        row-gap: 1rem;
+    }
+    
+    .btn__creac {
+        position: static;
+    }
+    
+    .btn__nxt {
+        position: static;
+    }
+
+    .foot {
+        padding: 0;
+    }
+
+}
+
+@media screen and (max-width: 280px) {
+
+    .foot {
+        flex-direction: column;
+    }
+    .menu__item {
+        padding-left: 0;
+    }
+}
 
     
 
