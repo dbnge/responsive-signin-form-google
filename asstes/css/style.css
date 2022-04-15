@@ -142,7 +142,6 @@ button {
     flex-direction: column;
     text-align: left;
     margin-bottom: 2.5rem;
-    
 }
 
 .form__label {
@@ -251,7 +250,7 @@ button {
     z-index: 2;
 }
 
-/* ==================== LABEL STAY UP WHEN ACTION ON INPUT ==================== */
+/* ==================== FOOTER ==================== */
 
 .foot {
     min-width: 470px;
